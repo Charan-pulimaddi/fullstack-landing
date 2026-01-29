@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 
+const BACKEND_URL = "https://landing-backend-49k6.onrender.com";
+
 const Clients = () => {
   const [clients, setClients] = useState([]);
 
@@ -28,7 +30,7 @@ const Clients = () => {
               <img
                 src={
                   c.image
-                    ? `http://localhost:5000/${c.image}`
+                    ? `${BACKEND_URL}/${c.image}`
                     : "/client-placeholder.jpg"
                 }
                 alt={c.name}

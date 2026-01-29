@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 
+const BACKEND_URL = "https://landing-backend-49k6.onrender.com";
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
@@ -30,7 +32,7 @@ const Projects = () => {
               <img
                 src={
                   p.image
-                    ? `http://localhost:5000/${p.image}`
+                    ? `${BACKEND_URL}/${p.image}`
                     : "/project-placeholder.jpg"
                 }
                 alt={p.name}
@@ -38,12 +40,8 @@ const Projects = () => {
               />
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold">
-                  {p.name}
-                </h3>
-                <p className="text-gray-600 mt-2">
-                  {p.description}
-                </p>
+                <h3 className="text-xl font-semibold">{p.name}</h3>
+                <p className="text-gray-600 mt-2">{p.description}</p>
                 <button className="mt-4 text-blue-600 font-semibold">
                   Read More →
                 </button>
